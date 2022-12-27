@@ -2,12 +2,12 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const app = express();
+
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.get("/", function(req, res){
 	res.sendFile(__dirname + "/index.html");
 })
-
 
 app.post("/", function(req, res){
 	let num1 = Number(req.body.num1);
@@ -18,6 +18,13 @@ app.post("/", function(req, res){
 	//console.log(req.body);
 	//console.log(req.body.num1);
 })
+
+app.get("/bmicalculator", function(req, res){
+		res.sendFile(__dirname + "/bmicalculator.html");
+})
+
+
+
 
 
 app.listen(3000, function(){
